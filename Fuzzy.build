@@ -3,10 +3,12 @@
   <PropertyGroup>
     <ProjectName>Fuzzy</ProjectName>
 	<DebugOutputDir>.\DebugBinaries</DebugOutputDir>
+	<ReleaseOutputDir>.\Release</ReleaseOutputDir>
   </PropertyGroup> 
   
   <ItemGroup>
 	<DebugBinaries Include="**\bin\Debug\*.dll" Exclude="**\TestResults\**"/>
+	<ReleaseBinaries Include="**\bin\Release\*.dll"/>
   </ItemGroup>
 
   <Target Name="DebugBuild">
@@ -29,6 +31,7 @@
     <Message Text="Building $(ProjectName) Release Build" />
     <MSBuild Projects="$(ProjectName).sln" Targets="Clean" Properties="Configuration=Release" />
     <MSBuild Projects="$(ProjectName).sln" Targets="Build" Properties="Configuration=Release" />
+	<Copy SourceFiles="@(ReleaseBinaries)" DestinationFolder="$(ReleaseOutputDir)"/>
     <Message Text="$(ProjectName) Release Build Complete!" />
   </Target>
 
