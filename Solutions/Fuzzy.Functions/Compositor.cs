@@ -8,6 +8,8 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 using System.Linq;
+using Fuzzy.Contracts.Collections;
+using Fuzzy.Contracts.Entities;
 
 namespace Fuzzy.Functions
 {

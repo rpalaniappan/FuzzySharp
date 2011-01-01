@@ -7,14 +7,13 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-using System.Collections;
-using System.Linq;
-
-namespace Fuzzy
+namespace Fuzzy.Entities
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
-    using Fuzzy.Contracts;
+    using System.Linq;
+    using Contracts.Entities;
 
     /// <summary>
     /// Implementation for a Fuzzy Set
@@ -48,6 +47,22 @@ namespace Fuzzy
         /// Fuzzy Elements in universe of discourse
         /// </summary>
         public SortedList<double, IFuzzyElement> Elements { get; set; }
+
+        /// <summary>
+        /// Get the max value of the universe of discourse
+        /// </summary>
+        public double MaxX
+        {
+            get { return this.Elements.Keys.LastOrDefault(); }
+        }
+
+        /// <summary>
+        /// Get the min value of the universe of discouse
+        /// </summary>
+        public double MinX
+        {
+            get { return this.Elements.Keys.FirstOrDefault(); }
+        }
 
         #endregion
 

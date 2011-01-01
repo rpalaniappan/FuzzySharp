@@ -40,17 +40,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FuzzyElement.cs" />
-    <Compile Include="FuzzyRow.cs" />
-    <Compile Include="FuzzySet.cs" />
+    <Compile Include="Collections\FuzzyValues.cs" />
+    <Compile Include="Entities\FuzzyElement.cs" />
+    <Compile Include="Collections\FuzzyRow.cs" />
+    <Compile Include="Entities\FuzzySet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rules\Builder\RuleBuilder.cs" />
+    <Compile Include="Rules\Condition.cs" />
+    <Compile Include="Rules\Consequence.cs" />
+    <Compile Include="Rules\FuzzyAlgorithm.cs" />
+    <Compile Include="Rules\Rule.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Fuzzy.Contracts\Fuzzy.Contracts.csproj">
       <Project>{DF48329B-9E56-4945-8051-054B5A070B00}</Project>
       <Name>Fuzzy.Contracts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Fuzzy.Functions\Fuzzy.Functions.csproj">
+      <Project>{098F09EB-0E52-4C9F-9DE5-A095E08B76B3}</Project>
+      <Name>Fuzzy.Functions</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

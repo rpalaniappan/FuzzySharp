@@ -1,4 +1,7 @@
-﻿namespace Fuzzy.Functions.Tests
+﻿using Fuzzy.Contracts.Entities;
+using Fuzzy.Entities;
+
+namespace Fuzzy.Functions.Tests
 {
     using System;
     using System.Collections.Generic;

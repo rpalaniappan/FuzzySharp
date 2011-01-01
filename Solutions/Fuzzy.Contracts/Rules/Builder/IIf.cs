@@ -1,24 +1,24 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="IFuzzyRow.cs" company="I9 Tecnologia da Informação">
-// Fuzzy Library Project  
+// <copyright file="IIf.cs" company="I9 Tecnologia da Informação">
+//   Fuzzy Library Project
 // </copyright>
 // <summary>
 //   Interface for a FuzzyElement
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Fuzzy.Contracts
+namespace Fuzzy.Contracts.Rules.Builder
 {
-    using System.Collections.Generic;
-
     /// <summary>
-    /// Fuzzy Row of element
+    /// Builder If
     /// </summary>
-    public interface IFuzzyRow : IList<IFuzzyElement>
+    public interface IIf
     {
         /// <summary>
-        /// Value on the universe of discourse
+        /// Setup If
         /// </summary>
-        double X { get; set; }
+        /// <param name="variable">Variable Name</param>
+        /// <returns>Is</returns>
+        IIs If(string variable);
     }
 }

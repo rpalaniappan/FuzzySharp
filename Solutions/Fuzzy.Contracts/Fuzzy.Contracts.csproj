@@ -40,11 +40,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IFuzzyElement.cs" />
-    <Compile Include="IFuzzyRow.cs" />
-    <Compile Include="IFuzzySet.cs" />
+    <Compile Include="Rules\Builder\IClause.cs" />
+    <Compile Include="Rules\Builder\IElse.cs" />
+    <Compile Include="Rules\Builder\IIf.cs" />
+    <Compile Include="Rules\Builder\IIs.cs" />
+    <Compile Include="Rules\Builder\IResult.cs" />
+    <Compile Include="Rules\ICondition.cs" />
+    <Compile Include="Rules\IFuzzyAlgorithm.cs" />
+    <Compile Include="Entities\IFuzzyElement.cs" />
+    <Compile Include="Collections\IFuzzyRow.cs" />
+    <Compile Include="Entities\IFuzzySet.cs" />
+    <Compile Include="Collections\IFuzzyValues.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rules\IConsequence.cs" />
+    <Compile Include="Rules\IRule.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

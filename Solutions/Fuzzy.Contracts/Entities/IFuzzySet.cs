@@ -7,7 +7,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Fuzzy.Contracts
+namespace Fuzzy.Contracts.Entities
 {
     using System;
     using System.Collections.Generic;
@@ -21,7 +21,17 @@ namespace Fuzzy.Contracts
         /// Fuzzy Elements in universe of discourse
         /// </summary>
         SortedList<double, IFuzzyElement> Elements { get; set; }
-        
+
+        /// <summary>
+        /// Get the max value of the universe of discourse
+        /// </summary>
+        double MaxX { get; }
+
+        /// <summary>
+        /// Get the min value of the universe of discouse
+        /// </summary>
+        double MinX { get; }
+
         /// <summary>
         /// Register a membership function
         /// </summary>

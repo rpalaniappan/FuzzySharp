@@ -27,5 +27,28 @@ namespace Fuzzy.Functions
         {
             return 1 / (1 + Math.Pow(x / div, exp));
         }
+
+        /// <summary>
+        /// Triangula membership function 
+        /// </summary>
+        /// <param name="midPoint">MidPoint</param>
+        /// <param name="max">MaxPoint</param>
+        /// <param name="min">MinPoint</param>
+        /// <param name="x">x value</param>
+        /// <returns>Degree of membership</returns>
+        public static double TriangularMembershipFunction(double midPoint, double max, double min, double x)
+        {
+            if (x == midPoint)
+            {
+                return 1;
+            }
+
+            if (x < midPoint)
+            {
+                return (1 / (midPoint - min)) * (x - min);
+            }
+
+            return (1 / (max - midPoint)) * (max - x);
+        }
     }
 }

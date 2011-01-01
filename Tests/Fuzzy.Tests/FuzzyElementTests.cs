@@ -1,4 +1,6 @@
-﻿namespace Fuzzy.Tests
+﻿using Fuzzy.Entities;
+
+namespace Fuzzy.Tests
 {
     using System;
     using System.Text;

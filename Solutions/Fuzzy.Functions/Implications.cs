@@ -7,6 +7,8 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
+using Fuzzy.Contracts.Entities;
+
 namespace Fuzzy.Functions
 {
     using Contracts;

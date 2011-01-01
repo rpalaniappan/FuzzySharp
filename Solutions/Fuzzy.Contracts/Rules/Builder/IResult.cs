@@ -1,25 +1,24 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="FuzzyRow.cs" company="I9 Tecnologia da Informação">
-// Fuzzy Library Project  
+// <copyright file="IResult.cs" company="I9 Tecnologia da Informação">
+//   Fuzzy Library Project
 // </copyright>
 // <summary>
 //   Interface for a FuzzyElement
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Fuzzy
+namespace Fuzzy.Contracts.Rules.Builder
 {
-    using System.Collections.Generic;
-    using Contracts;
-
     /// <summary>
-    /// Representation of a Row of fuzzy element
+    /// Setup result
     /// </summary>
-    public class FuzzyRow : List<IFuzzyElement>, IFuzzyRow
+    public interface IResult
     {
         /// <summary>
-        /// Value on the universe of discourse
+        /// Setup Is Result
         /// </summary>
-        public double X { get; set; }
+        /// <param name="value">Value</param>
+        /// <returns>Else</returns>
+        IElse Is(string value);
     }
 }

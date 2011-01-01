@@ -2,7 +2,10 @@
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
+using Fuzzy.Collections;
 using Fuzzy.Contracts;
+using Fuzzy.Contracts.Entities;
+using Fuzzy.Entities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Fuzzy.Functions.Tests

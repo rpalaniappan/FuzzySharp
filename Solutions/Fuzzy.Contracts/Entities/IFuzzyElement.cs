@@ -7,7 +7,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Fuzzy.Contracts
+namespace Fuzzy.Contracts.Entities
 {
     using System;
 

@@ -13,6 +13,7 @@ namespace Fuzzy.Functions
     using System.Collections.Generic;
     using System.Linq;
     using Contracts;
+    using Contracts.Entities;
 
     /// <summary>
     /// Provides Fuzzy functions
@@ -20,6 +21,29 @@ namespace Fuzzy.Functions
     public static class Functions
     {
         #region Function for FuzzySet's
+
+        /// <summary>
+        /// The union of all FuzzySets
+        /// </summary>
+        /// <param name="fuzzySets">List of all FuzzySets</param>
+        /// <returns>FuzzySet result</returns>
+        public static IFuzzySet Union(this List<IFuzzySet> fuzzySets)
+        {
+            var result = fuzzySets.FirstOrDefault().GetNewEmpty();
+
+            var keys = new List<double>();
+            fuzzySets.ForEach(x => keys.AddRange(x.Elements.Keys.Select(y => y)));
+            var distinctKeys = keys.Distinct().ToList();
+
+            var elements =
+                distinctKeys.Select(
+                    x => fuzzySets.Where(y => y.Elements.ContainsKey(x)).Select(z => z.Elements[x]).ToList().Max()).
+                    ToList();
+
+            result.AddElements(elements);
+
+            return result;
+        }
 
         /// <summary>
         /// Union Function (max)
@@ -161,6 +185,34 @@ namespace Fuzzy.Functions
         /// <summary>
         /// Max function
         /// </summary>
+        /// <param name="elements">Fuzzy elements</param>
+        /// <returns>Max Fuzzy element between A and B</returns>
+        public static IFuzzyElement Max(this List<IFuzzyElement> elements)
+        {
+            var result = elements.FirstOrDefault().Clone();
+
+            result.Value = elements.Select(x => x.Value).Max();
+
+            return result;
+        }
+
+        /// <summary>
+        /// Min function
+        /// </summary>
+        /// <param name="elements">Fuzzy elements</param>
+        /// <returns>Max Fuzzy element between A and B</returns>
+        public static IFuzzyElement Min(this List<IFuzzyElement> elements)
+        {
+            var result = elements.FirstOrDefault().Clone();
+
+            result.Value = elements.Select(x => x.Value).Min();
+
+            return result;
+        }
+
+        /// <summary>
+        /// Max function
+        /// </summary>
         /// <param name="elementA">Fuzzy element A</param>
         /// <param name="elementB">Fuzzy element B</param>
         /// <returns>Max Fuzzy element between A and B</returns>
@@ -281,6 +333,31 @@ namespace Fuzzy.Functions
             {
                 list.Add(from);
                 from += step;
+            }
+
+            return list.ToArray();
+        }
+
+        /// <summary>
+        /// Get a array range
+        /// </summary>
+        /// <param name="from">Inicial range</param>
+        /// <param name="to">Final range</param>
+        /// <param name="step">range step</param>
+        /// <param name="digits">Digits for rounding</param>
+        /// <returns>Array representing the range</returns>
+        public static double[] GetRoundedRange(this double from, double to, double step, int digits)
+        {
+            if (from >= to)
+            {
+                throw new ArgumentException("Invalid range. The 'from' number must be less then 'to' number.");
+            }
+
+            var list = new List<double>();
+            while (from <= to)
+            {
+                list.Add(from);
+                from = Math.Round(from + step, digits);
             }
 
             return list.ToArray();

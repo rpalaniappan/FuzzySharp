@@ -7,11 +7,11 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Fuzzy
+namespace Fuzzy.Entities
 {
     using System;
     using System.Globalization;
-    using Contracts;
+    using Contracts.Entities;
 
     /// <summary>
     /// Implementação para FuzzyElement
