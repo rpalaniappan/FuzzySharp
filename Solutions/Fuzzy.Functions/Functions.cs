@@ -12,7 +12,6 @@ namespace Fuzzy.Functions
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using Contracts;
     using Contracts.Entities;
 
     /// <summary>
@@ -292,6 +291,11 @@ namespace Fuzzy.Functions
         /// <returns>New element result o Product Logic AND</returns>
         public static IFuzzyElement DrasticProductAnd(this IFuzzyElement elementA, IFuzzyElement elementB)
         {
+            if (elementA == null || elementB == null)
+            {
+                throw new ArgumentNullException();
+            }
+
             if (elementA.Value == 1)
             {
                 return elementB;

@@ -41,6 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Collections\FuzzyValues.cs" />
+    <Compile Include="Defuzzifiers\CenterOfAreaDefuzzifier.cs" />
+    <Compile Include="Defuzzifiers\CenterOfSumDefuzzifier.cs" />
+    <Compile Include="Defuzzifiers\MeanOfMaximaDefuzzifier.cs" />
     <Compile Include="Entities\FuzzyElement.cs" />
     <Compile Include="Collections\FuzzyRow.cs" />
     <Compile Include="Entities\FuzzySet.cs" />
@@ -55,10 +58,6 @@
     <ProjectReference Include="..\Fuzzy.Contracts\Fuzzy.Contracts.csproj">
       <Project>{DF48329B-9E56-4945-8051-054B5A070B00}</Project>
       <Name>Fuzzy.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Fuzzy.Functions\Fuzzy.Functions.csproj">
-      <Project>{098F09EB-0E52-4C9F-9DE5-A095E08B76B3}</Project>
-      <Name>Fuzzy.Functions</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

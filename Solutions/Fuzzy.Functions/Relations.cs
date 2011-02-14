@@ -7,15 +7,12 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-using Fuzzy.Contracts.Collections;
-using Fuzzy.Contracts.Entities;
-
 namespace Fuzzy.Functions
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using Contracts;
+    using Contracts.Collections;
+    using Contracts.Entities;
 
     /// <summary>
     /// Relations

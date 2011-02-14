@@ -7,12 +7,10 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-using Fuzzy.Contracts.Entities;
-
 namespace Fuzzy.Functions
 {
     using System;
-    using Contracts;
+    using Contracts.Entities;
 
     /// <summary>
     /// Modifiers extension methods

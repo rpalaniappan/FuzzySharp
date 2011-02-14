@@ -7,14 +7,12 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-using System.Linq;
-using Fuzzy.Contracts.Collections;
-using Fuzzy.Contracts.Entities;
-
 namespace Fuzzy.Functions
 {
     using System.Collections.Generic;
-    using Contracts;
+    using System.Linq;
+    using Contracts.Collections;
+    using Contracts.Entities;
 
     /// <summary>
     /// Class to provide matrix composition

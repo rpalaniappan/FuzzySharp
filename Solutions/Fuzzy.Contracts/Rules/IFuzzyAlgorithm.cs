@@ -11,6 +11,7 @@ namespace Fuzzy.Contracts.Rules
 {
     using System;
     using System.Collections.Generic;
+    using Defuzzifier;
     using Entities;
 
     /// <summary>
@@ -19,9 +20,9 @@ namespace Fuzzy.Contracts.Rules
     public interface IFuzzyAlgorithm
     {
         /// <summary>
-        /// Connective ELSE function
+        /// Defuzzifier
         /// </summary>
-        Func<List<IFuzzySet>, IFuzzySet> ConnectiveElse { get; }
+        IDefuzzifier Defuzzifier { get; set; }
 
         /// <summary>
         /// Connective AND function
@@ -37,7 +38,7 @@ namespace Fuzzy.Contracts.Rules
         /// Calculate the fuzzySet result
         /// </summary>
         /// <param name="values">Parameters and values</param>
-        /// <returns>Result fuzzySet</returns>
-        IFuzzySet CalculateResult(IDictionary<string, double> values);
+        /// <returns>Crisp Value</returns>
+        double CalculateResult(IDictionary<string, double> values);
     }
 }

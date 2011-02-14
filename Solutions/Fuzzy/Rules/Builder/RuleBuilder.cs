@@ -1,19 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Fuzzy.Contracts.Collections;
-using Fuzzy.Contracts.Entities;
-using Fuzzy.Contracts.Rules;
-using Fuzzy.Contracts.Rules.Builder;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="RuleBuilder.cs" company="I9 Tecnologia da Informação">
+//   Fuzzy Library Project
+// </copyright>
+// <summary>
+//   RuleBuilder
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+using Fuzzy.Contracts.Defuzzifier;
 
 namespace Fuzzy.Rules.Builder
 {
+    using System;
+    using System.Collections.Generic;
+    using Contracts.Collections;
+    using Contracts.Entities;
+    using Contracts.Functions;
+    using Contracts.Rules;
+    using Contracts.Rules.Builder;
+
     /// <summary>
     /// Rule builder
     /// </summary>
     public class RuleBuilder : IIf, IIs, IClause, IResult, IElse
     {
+        #region Private Fields
+
         /// <summary>
         /// Fuzzy Values
         /// </summary>
@@ -29,34 +41,66 @@ namespace Fuzzy.Rules.Builder
         /// </summary>
         private IRule _lastRule;
 
+        #endregion
+
+        #region Constructor
+
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="fuzzyValues">
         /// The fuzzy Values.
         /// </param>
-        /// <param name="connectiveElse">
-        /// Function for connective else
-        /// </param>
         /// <param name="connectiveAnd">Function for connective and</param>
         /// <param name="degreeOfFulfillment">degree of Fulfillment</param>
+        /// <param name="defuzzifier">Defuzzifier</param>
         /// <returns>
         /// New FuzzyAlgorithm
         /// </returns>
-        public RuleBuilder(IFuzzyValues fuzzyValues,
-                           Func<List<IFuzzySet>, IFuzzySet> connectiveElse,
-                           Func<List<IFuzzyElement>, IFuzzyElement> connectiveAnd, 
-                           Func<IFuzzySet, IFuzzyElement, IFuzzySet> degreeOfFulfillment)
+        public RuleBuilder(IFuzzyValues fuzzyValues, 
+                           IGenericElementFromFuzzyElementsFunction connectiveAnd,
+                           IGenericDegreeOfFulfillmentFunction degreeOfFulfillment,
+                           IDefuzzifier defuzzifier)
         {
-            this.FuzzyAlgorithm = new FuzzyAlgorithm(connectiveElse, connectiveAnd, degreeOfFulfillment);
+            this.FuzzyAlgorithm = new FuzzyAlgorithm(connectiveAnd, degreeOfFulfillment, defuzzifier);
             this._fuzzyValues = fuzzyValues;
             this._lastRule = new Rule();
         }
 
         /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="fuzzyValues">
+        /// The fuzzy Values.
+        /// </param>
+        /// <param name="connectiveAnd">Function for connective and</param>
+        /// <param name="degreeOfFulfillment">degree of Fulfillment</param>
+        /// <param name="defuzzifier">Defuzzifier</param>
+        /// <returns>
+        /// New FuzzyAlgorithm
+        /// </returns>
+        public RuleBuilder(IFuzzyValues fuzzyValues,
+                           Func<List<IFuzzyElement>, IFuzzyElement> connectiveAnd, 
+                           Func<IFuzzySet, IFuzzyElement, IFuzzySet> degreeOfFulfillment,
+                           IDefuzzifier defuzzifier)
+        {
+            this.FuzzyAlgorithm = new FuzzyAlgorithm(connectiveAnd, degreeOfFulfillment, defuzzifier);
+            this._fuzzyValues = fuzzyValues;
+            this._lastRule = new Rule();
+        }
+
+        #endregion
+
+        #region Properties
+
+        /// <summary>
         /// FuzzyAlgorithm 
         /// </summary>
         public IFuzzyAlgorithm FuzzyAlgorithm { get; private set; }
+
+        #endregion
+
+        #region Configuration Interfaces Implementation
 
         /// <summary>
         /// If clause
@@ -135,5 +179,7 @@ namespace Fuzzy.Rules.Builder
 
             return this;
         }
+
+        #endregion
     }
 }

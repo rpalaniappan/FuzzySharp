@@ -40,6 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Functions\IGenericDegreeOfFulfillmentFunction.cs" />
+    <Compile Include="Functions\IGenericElementFromFuzzyElementsFunction.cs" />
+    <Compile Include="Functions\IGenericFuzzySetFromFuzzySetsFunction.cs" />
+    <Compile Include="Functions\IGenericElementFromFuzzySetsFunction.cs" />
+    <Compile Include="Defuzzifier\IDefuzzifier.cs" />
     <Compile Include="Rules\Builder\IClause.cs" />
     <Compile Include="Rules\Builder\IElse.cs" />
     <Compile Include="Rules\Builder\IIf.cs" />

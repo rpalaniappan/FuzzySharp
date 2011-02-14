@@ -31,12 +31,22 @@ namespace Fuzzy.Functions
         /// <summary>
         /// Triangula membership function 
         /// </summary>
-        /// <param name="midPoint">MidPoint</param>
-        /// <param name="max">MaxPoint</param>
-        /// <param name="min">MinPoint</param>
-        /// <param name="x">x value</param>
-        /// <returns>Degree of membership</returns>
-        public static double TriangularMembershipFunction(double midPoint, double max, double min, double x)
+        /// <param name="min">
+        /// MinPoint
+        /// </param>
+        /// <param name="midPoint">
+        /// MidPoint
+        /// </param>
+        /// <param name="max">
+        /// MaxPoint
+        /// </param>
+        /// <param name="x">
+        /// x value
+        /// </param>
+        /// <returns>
+        /// Degree of membership
+        /// </returns>
+        public static double TriangularMembershipFunction(double min, double midPoint, double max, double x)
         {
             if (x == midPoint)
             {

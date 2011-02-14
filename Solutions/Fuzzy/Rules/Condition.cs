@@ -7,13 +7,10 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-using System;
-
 namespace Fuzzy.Rules
 {
     using Contracts.Entities;
     using Contracts.Rules;
-    using Functions;
 
     /// <summary>
     /// Conditin on LHS for Fuzzy Algorithm
@@ -49,7 +46,7 @@ namespace Fuzzy.Rules
         /// <returns>True if matches</returns>
         public bool Matches(double value)
         {
-            return value.IsBetween(this.FuzzySet.MaxX, this.FuzzySet.MinX);
+            return value <= this.FuzzySet.MaxX && value >= this.FuzzySet.MinX;
         }
     }
 }
