@@ -22,6 +22,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{5EBC9BAB-F69C-4962-867B-940E0DE6FA9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuzzyChart", "Samples\FuzzyChart\FuzzyChart.csproj", "{1C66C7E9-1789-4278-B878-178AC09C0E99}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Fuzzy1.vsmdi
@@ -85,6 +89,17 @@ Global
 		{7FF7183D-BA07-49A5-951B-BD0B4A634DC3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{7FF7183D-BA07-49A5-951B-BD0B4A634DC3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{7FF7183D-BA07-49A5-951B-BD0B4A634DC3}.Release|x86.ActiveCfg = Release|Any CPU
+		{1C66C7E9-1789-4278-B878-178AC09C0E99}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{1C66C7E9-1789-4278-B878-178AC09C0E99}.Debug|Any CPU.Build.0 = Debug|x86
+		{1C66C7E9-1789-4278-B878-178AC09C0E99}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{1C66C7E9-1789-4278-B878-178AC09C0E99}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{1C66C7E9-1789-4278-B878-178AC09C0E99}.Debug|x86.ActiveCfg = Debug|x86
+		{1C66C7E9-1789-4278-B878-178AC09C0E99}.Debug|x86.Build.0 = Debug|x86
+		{1C66C7E9-1789-4278-B878-178AC09C0E99}.Release|Any CPU.ActiveCfg = Release|x86
+		{1C66C7E9-1789-4278-B878-178AC09C0E99}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{1C66C7E9-1789-4278-B878-178AC09C0E99}.Release|Mixed Platforms.Build.0 = Release|x86
+		{1C66C7E9-1789-4278-B878-178AC09C0E99}.Release|x86.ActiveCfg = Release|x86
+		{1C66C7E9-1789-4278-B878-178AC09C0E99}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -96,5 +111,6 @@ Global
 		{9B5BBC68-3E3E-4A08-BA86-D7A902E66F34} = {3AC9140C-E20F-42A6-A72C-F2BFCA320FEA}
 		{DF48329B-9E56-4945-8051-054B5A070B00} = {3AC9140C-E20F-42A6-A72C-F2BFCA320FEA}
 		{098F09EB-0E52-4C9F-9DE5-A095E08B76B3} = {3AC9140C-E20F-42A6-A72C-F2BFCA320FEA}
+		{1C66C7E9-1789-4278-B878-178AC09C0E99} = {5EBC9BAB-F69C-4962-867B-940E0DE6FA9E}
 	EndGlobalSection
 EndGlobal
